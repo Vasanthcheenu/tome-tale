@@ -1,0 +1,247 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+      
+    
+.about1-text{
+    text-align: center;  
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background-color:#f3d250;
+}
+.about1-text h3{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+    font-family: "Merriweather", serif;
+    font-weight: 800; 
+}
+.about2-img{
+    width: 100%;
+}
+.about2-img img{
+    width: 100%;
+    height: auto;
+}
+.author-images img{
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+.best-author{
+    display: flex;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+.about3-text{
+    background-color: #fce786;
+    padding-top: 50px;
+}
+.about3-text h3{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+}
+.author-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+}
+.author2-images img{
+        width: 100px;
+        height: 100px;
+        border: 1px solid white;
+        border-radius: 50px;
+}  
+.author2-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+}
+.author2-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+    margin-left: 30px;
+}
+.author3-images img{
+        width: 100px;
+        height: 100px;
+        border: 1px solid white;
+        border-radius: 50px;
+}  
+.author3-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+}
+.author3-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+    margin-left: 60px;
+}
+.feedback{
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #ffaaae;
+    width: 100%;
+}
+.feed1{
+    width: 50%;
+    text-align: center;
+}
+.feed1 p{
+    font-family: "Playwrite GB S", cursive;
+}
+.feed1 h4{
+    margin-left: 200px;
+    font-family: "Playwrite GB S", cursive;
+    font-weight: 800;
+}
+.company{
+    width: 50%;
+   margin-left: 50%;
+}
+.colab1{
+    position: relative;
+    bottom: 220px;
+    left: 50px;
+}
+.colab2{
+    position: relative;
+    bottom: 220px;
+    left: 100px;
+}
+.colab3{
+    position: relative;
+    bottom: 220px;
+    left: 170px;
+}
+.colab4{
+    position: relative;
+    bottom: 100px;
+    right: 240px;
+}
+
+.colab5{
+    position: relative;
+    bottom: 120px;
+    right: 180px;
+}
+.colab6{
+    position: relative;
+    bottom: 120px;
+    right: 110px;
+}
+.company img{
+    width: 90px;
+    height: auto;
+}
+.dir-about{
+    text-align: end;
+}
+.om h3 a{
+    text-decoration: none;
+}
+.dir-about .om{
+    position: relative;
+    margin-right: 170px;
+    color: grey;
+    font-size: 16px;
+} 
+.om:hover{
+    color:#d22d16;
+    cursor: pointer;
+}
+.dir-about .abt{
+    position: relative;
+    margin-right: 80px;
+    bottom: 35px;
+    font-size: 16px;
+} 
+.about-us h2{
+    position: relative;
+    top: 50px;
+    left: 40px;
+    font-size: 30px;
+    font-family: "Sora", "HelveticaNeue-Light";
+    color: #d22d16;
+    
+}
+.about-us{
+    padding-bottom: 20px;
+    overflow: hidden;
+    background-color: #dcede2;
+    
+}
+    </style>
+</head>
+<body>
+    <section class="about-us">
+        <h2>About Us</h2>
+        <div class="dir-about">
+            <a href="{%url 'home' %}" style="text-decoration: none;"><h3 class="om">Home   <i class="fa-solid fa-arrow-right"></i></h3></a> <h3 class="abt">About Us</h3>
+        </div>
+    </section>
+   <section class="about1">
+    <div class="about1-text">
+        
+        <h3>Welcome to Tome & Tale book shop, the ultimate <br> destination for all book lovers! We take pride in providing <br>a diverse and extensive collection of books, catering to a <br>wide range of interests and genres.</h3>
+    </div>
+   </section>  
+   
+   <section class="about2-img">
+    <img src="{%static 'images/about-img1.webp'%}" alt="">
+   </section>
+   <section class="about3-text">
+    <h3>TOP AUTHORS</h3>
+    <div class="best-author">
+    <div class="author-images">
+        <img src="{%static 'images/author-images1.avif' %}" alt="">
+        <h2>william shakespeare</h2>
+        <p>Renowned English poet, playwright, and actor <br>born in 1564 in Stratford-upon-Avon .</p>
+    </div>
+    <div class="author2-images">
+        <img src="{%static 'images/author-images2.jpeg' %}" alt="">
+        <h2>Stephen Edwin King </h2>
+        <p>He is an American author of contemporary horror, <br>mystery, science fiction, and fantasy novels.</p>
+    </div>
+    <div class="author3-images">
+        <img src="{%static 'images/author-images3.webp' %}" alt="">
+        <h2>Jay Shetty </h2>
+        <p>He is an English podcaster, author, and life coach, best <br>known for his podcast On Purpose. Jay Shetty . Shetty <br>in August 2021. Born. London, England.</p>
+    </div></div>
+    <section class="feedback">
+        <div class="feed1">
+           <p>I order a book from Tome & Tale,I love the<br> wide selection of genres! There's always <br>something new to discover.While I love <br>the selection, some prices seem a bit high <br>compared to online options. A loyalty <br>program or discounts would be appreciated</p>
+           <h4> -SRI</h4>
+        </div>
+        <div class="company">
+          <img src="{%static 'images/colab1-image.png'%}" alt="" class="colab1">
+          <img src="{%static 'images/colab2-images.png'%}" alt="" class="colab2">
+          <img src="{%static 'images/colab3-image.svg'%}" alt="" class="colab3">
+          <img src="{%static 'images/colab4-images.png'%}" alt="" class="colab4">
+          <img src="{%static 'images/colab5-image.png'%}" alt="" class="colab5">
+          <img src="{%static 'images/colab6-images.png'%}" alt="" class="colab6">
+        </div>
+    </section>
+   </section>
+    {%include 'footer.html'%}
+</body>
+</html>

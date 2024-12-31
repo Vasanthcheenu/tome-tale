@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load static %}
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      body{
+    margin: 0px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;  
+    background-color:#6A1E55;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+.un {
+   list-style-type: none;
+   
+}
+.ul .un{
+   
+   margin-top: -13px;
+}
+
+.footer ul li{
+    padding: 6px;
+    font-size: 13px;
+    color: white;
+    list-style-type: none;
+}
+.footer a{
+  color: white;
+  text-decoration: none;
+}
+.list1{
+    margin-left: 150px;
+}
+.list5{
+    margin-right: 150px;   
+}
+.list5 a{
+  text-decoration: none;
+}
+.list1 h4{
+    margin-left: 30px;
+}
+.footer h6{
+    margin-left: 30px;
+    font-size: 15px;
+}
+.list1{
+    margin-top: 15px;
+}
+.list5 i{
+    padding:5px;
+    rotate: 90;
+    font-size: 22px; 
+    color: white;
+}
+.list5 ul{
+    margin-left: -12px;
+}
+.footer ul li:hover{
+    color: white;
+}
+.con img{
+    width: 110px;
+    height: auto;
+    position: relative;
+    top: 30px;
+    right: 20px;
+    border-radius: 3px;
+}
+.con p{
+    margin-top: 40px;
+    font-size: 15px;
+}
+    </style>
+</head>
+<body>
+  <section class="footer">
+    <div class="list1">
+      <h4>COLORLIP</h4>
+     <ul class="ul">
+      
+      <li>@2019</li>
+     </ul>
+    </div>
+    <div class="list2">
+      <h6>Customers</h6>
+      <ul class="ul">
+        
+        <li><a href="">Buyers</a></li>
+        <li><a href="">Supplier</a></li>
+      </ul>
+    </div>
+    <div class="list3">
+      <h6>Company</h6>
+      <ul class="ul">
+        
+        <li><a href="">About Us</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="list4">
+      <h6>Further Information</h6>
+      <ul class="un">
+        
+        <li><a href="">Terms & Condition</a></li>
+        <li><a href="">Privacy policy</a></li>
+      </ul>
+    </div>
+    <div class="list5">
+      <h6>Follow Us</h6>
+      <ul class="un">
+       <li><a href="#"> <i class="fa-brands fa-facebook"></i></a><a href="#"> <i class="fa-brands fa-twitter"></i></a><a href="#"> <i class="fa-brands fa-linkedin-in"></i></a><a href="#"> <i class="fa-regular fa-envelope"></i></a><a href="#"> <i class="fa-brands fa-telegram"></i></a></li>
+      </ul>
+    </div>
+    <div class="con">
+    <a href="https://play.google.com/store/games?device=windows"><img src="{% static 'images/Googleplay1.png'%}" alt=""></a>
+    <a href=""><img src="{% static 'images/appstore.jpg'%}" alt=""></a>
+    <p>© 2024 Vasanth,Inc</p>
+  </div>
+  </section>
+</body>
+</html>

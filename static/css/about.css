@@ -1,0 +1,36 @@
+
+.about1-text{
+    text-align: center;
+   
+}
+.about1-text h3{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: "Sora", Sans-serif;
+}
+.about2-img{
+    width: 900px;
+    height: auto;
+}
+.about2-img img{
+    margin-left: 70px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.author2-images img{
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+.about3-text h3{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.author-images{
+    width: 30%;
+    height:auto ;
+    text-align: center;
+}
+

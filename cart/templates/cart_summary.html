@@ -1,0 +1,271 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartt</title>
+    {% load static %}
+    <style>
+        .body1-text1{
+    padding: 40px;
+   background-color: #d19cb7;
+   color: white;
+}
+.body1-text1 h3{
+     margin-left:78%;
+     font-size: 14px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.catuu{
+    position: relative;
+    left: 65px;
+    bottom: 26px;
+}
+.body1-text1 a{
+    text-decoration: none;
+    color: #6A1E55;
+    cursor: pointer;
+}
+.body1-text1 a:hover{
+    color: #A64D79;
+}
+.body1-text1 i{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.body1-text1 h2{
+    position: relative;
+    top: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+.body1-text1{
+    overflow: hidden;
+}
+.cartss {
+    padding: 100px;
+}
+.details{
+            width: 100%;
+            display: flex;
+            padding-top: 90px;
+            padding-bottom: 90px;
+            background-color:#ffeef7;
+        }
+        .del1{
+            width: 50%;
+            text-align: center;
+        }
+        .del1 img{
+            width: 50%;
+            text-align: center;
+        }
+        .det-text{
+            width: 40%; 
+            margin-right: 100px;
+        }
+        .det-text h3{
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+      
+        .sale_star{
+    font-size: 16px;
+    color: rgb(255 193 7);
+    padding: 10px;
+}
+        .desc{
+            font-size: 14px;
+            color: grey;
+        }
+        .totalall{
+            text-align: right;
+        }
+        .emptyy{
+           text-align: center; 
+           font-family: Open Sans Bold;
+        }
+        .emptyy h1{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .emptyy  button{
+            padding: 9px;
+            padding-left: 23px;
+            padding-right: 23px;
+            border: 1px solid #6A1E55;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+    </style>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   
+    
+</head>
+ 
+
+ 
+<body>
+        {% include 'navbar.html' %}
+        {% if messages %}
+        {%for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        {%endfor%}
+    {% endif %}
+   
+        
+        <section class="body1-text1">
+            <h2>Cart</h2>
+            <div class="dir-about">
+                <a href="{% url 'home' %}"> <h3 class="om">Home<i class="fa-solid fa-arrow-right"></i></h3></a><h3 class="catuu">Cart</h3>
+            </div>
+        </section>
+    <!--<section class="body1-text">
+        <h1>Cart page</h1>
+    </section>-->
+    <section class="cartss">
+        {% if cart_products %} 
+          {% for product in cart_products %}
+          <section class="details">
+            <div class="del1">
+                <img src="{{ product.image.url }}" alt="" width="73%" height="390px">
+            </div>
+            <div class="det-text">
+                <h3>{{product.name}}</h3>
+                
+               
+               <p class="desc">{{product.description}}</p>  
+    
+               {% if product.is_sale %}
+              
+                       
+                   <div class="card1-text">
+                       <h4 style="font-size: 18px; font-family:Arial, Helvetica, sans-serif; font-weight: 700;"><strike> ${{product.price}}</strike>
+                        &nbsp;
+                       ${{product.sale_price}}
+                    </h4>
+                       <div class="sale_star">
+                           <i class="fa-solid fa-star"></i> Sale!!! <i class="fa-solid fa-star"></i>
+                       </div>
+               {%else%}
+               
+                       <h4 style="font-size: 18px; font-family:Arial, Helvetica, sans-serif; font-weight: 700;">${{product.price}}</h4>
+                      
+                    
+               {% endif %}  
+               <br>
+
+               <div class="quantity" >
+                <div class="row justify-content">
+                  
+                    <div class="col-md-2">
+
+                        Quantity
+                    </div>
+                    <div class="col-md-2" >
+                        <select name="" id="select{{product.id}}" class="form-select" style="width: 90px; height: fit-content;">
+
+                            {% for key, value in quantities.items %}
+                                {% if key == product.id|slugify %} <!--if key is equal to id , also have to return str right, so slugify-->
+                                 <option selected>{{ value }} </option>
+                                {% endif %}
+                            {% endfor %}
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+               </div>    <br><br>  
+               <div class="buy">
+                <button href="#" class="btn btn-dark" role="button" data-bs-toggle="button">Buy Now</button>
+                <button  class="btn btn-dark update-cart"  role="button" data-bs-toggle="button" data-index="{{product.id}}">Update</button>
+                <button  class="btn btn-dark delete-cart"  role="button" data-bs-toggle="button" data-index="{{product.id}}">Delete</button>
+
+            </div>
+            </div>
+            
+        </section>
+          {% endfor %}
+          <hr>
+          <h3 class="totalall">Total : ${{totals}}</h3>
+        {% else %}
+        <div class="emptyy">
+        <img src="{% static 'images\empty-bag.png' %}" alt="">
+          <h1 >There is nothing in your cart </h1>
+          <a href="{% url 'home' %}"><button>Home</button></a>
+        </div> 
+      {% endif %}
+    </section>
+<script>
+    //update
+    $(document).on('click','.update-cart', function(e){
+      e.preventDefault();
+      // grab product id
+      var productid = $(this).data('index');
+      $.ajax({
+      type: 'POST',
+      url:"{% url 'cart_update' %}", //in urls
+      data: {
+        product_id: $(this).data('index'),
+        product_qty: $('#select' + productid + ' option:selected').text(),
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        action: 'post'
+        },
+       
+        success: function(json){  
+          //console.log(json)
+          document.getElementById("cart_quantity").textContent = json.qty
+          location.reload();
+        },
+     
+        error: function(xhr, errmsg, err){
+
+        }
+       
+      });
+   
+    }) 
+    
+    //delete
+    $(document).on('click','.delete-cart', function(e){
+      e.preventDefault();
+      // grab product id
+      var productid = $(this).data('index');
+      $.ajax({
+      type: 'POST',
+      url:"{% url 'cart_delete' %}", //in urls
+      data: {
+          product_id: $(this).data('index'),
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+          action: 'post',
+        },
+       
+        success: function(json){  
+          //console.log(json)
+          //document.getElementById("cart_quantity").textContent = json.qty
+          location.reload();
+        },
+     
+        error: function(xhr, errmsg, err){
+
+        }
+       
+      });
+   
+    })  
+  </script>
+
+
+    <section class="footer">
+       {% include 'footer.html' %}
+    </section>
+
+</body>
+</html>
+
